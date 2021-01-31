@@ -1,6 +1,8 @@
 package com.pjatk.project.weterynarz.controller;
 
+import com.pjatk.project.weterynarz.model.Klient;
 import com.pjatk.project.weterynarz.model.User;
+import com.pjatk.project.weterynarz.services.KlientService;
 import com.pjatk.project.weterynarz.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import java.util.List;
 public class FirstController {
 
     private UserService userService;
+    private KlientService klientService;
 
     public FirstController(UserService userService){
         this.userService = userService;
@@ -36,22 +39,12 @@ public class FirstController {
         return "uslugi";
     }
 
-    @PostMapping("/addedUser")
-    public ResponseEntity<String> addUser(@ModelAttribute("user") User user){
-        userService.createUser(new User(user.getImie(),user.getNazwisko(),user.getTelefon(), user.getEmail()));
+    @PostMapping("/addedKlient")
+    public ResponseEntity<String> addKlient(@ModelAttribute("Klient") Klient klient){
+        klientService.createKlient(new Klient(klient.getImie(),klient.getNazwisko(), klient.getTelefon(), klient.getEmail()));
         return ResponseEntity.ok("Dodano uzytkownika");
     }
-    @PostMapping("/addToDatabase")
-    public String submitUser(@ModelAttribute User user, Model model){
-        model.addAttribute("user", user);
-        return "user";
-    }
 
-    @GetMapping("/greeting")
-    public String mainPage(@RequestParam(name="name", required = false, defaultValue="World") String name, Model model){
-        model.addAttribute("name", name);
-        return "greeting";
-    }
 
     @GetMapping("/hello")
     public ResponseEntity<String> hello(){

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
+      lang="pl-PL">
+<head>
+    <title>Gabinet Weterynaryjny</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <a href="/">Gaja Zoo</a>
+        <ul id="menu">
+            <li class="menu-part"><a href="opis">O nas</a></li>
+            <li class="menu-part"><a href="cennik">Cennik</a></li>
+            <li class="menu-part"><a href="uslugi">Usługi</a></li>
+            <li class="menu-part"><a href="/kontakt">Kontakt</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <!--/*@thymesVar id="Klient" type="com.pjatk.project.weterynarz.model.Klient"*/-->
+        <form action="#" th:action="@{/addedKlient}" th:object="${Klient}" method="post">
+
+        </form>
+    </div>
+    <div id="footer">
+        Regulamin | <a href="login.html">Gaja zoo</a> | Kamil Romiński C 2021
+    </div>
+</div>
+</body>
+</html>

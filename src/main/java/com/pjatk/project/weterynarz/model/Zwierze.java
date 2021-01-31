@@ -21,10 +21,10 @@ public class Zwierze {
         this.wlasciciel_id = wlasciciel_id;
     }
 
-    public Zwierze(Long id, String nazwa, int wiek) {
-        this.id = id;
+    public Zwierze(String nazwa, int wiek, int wlasciciel_id) {
         this.nazwa = nazwa;
         this.wiek = wiek;
+        this.wlasciciel_id = wlasciciel_id;
     }
 
     public Zwierze() {
