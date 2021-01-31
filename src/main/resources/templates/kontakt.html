@@ -18,25 +18,27 @@
     </div>
     <div id="content">
         <!--/*@thymesVar id="Klient" type="com.pjatk.project.weterynarz.model.Klient"*/-->
-        <!--/*@thymesVar id="imie" type="String"*/-->
-        <!--/*@thymesVar id="nazwisko" type="String"*/-->
-        <!--/*@thymesVar id="email" type="String"*/-->
-        <!--/*@thymesVar id="telefon" type="int"*/-->
-        <!--/*@thymesVar id="zwierze_imie" type="String"*/-->
-        <!--/*@thymesVar id="zwierze_typ" type="String"*/-->
-        <!--/*@thymesVar id="zwierze_wiek" type="int"*/-->
-        <!--/*@thymesVar id="zgloszenie_problem" type="String"*/-->
-        <!--/*@thymesVar id="zgloszenie_data" type="java.util.Formatter.DateTime"*/-->
+        <!--/*@thymesVar id="Zwierze" type="com.pjatk.project.weterynarz.model.Zwierze"*/-->
+        <!--/*@thymesVar id="Wizyta" type="com.pjatk.project.weterynarz.model.Wizyta"*/-->
+        <!--/*@thymesVar id="Klient.imie" type="String"*/-->
+        <!--/*@thymesVar id="klient.nazwisko" type="String"*/-->
+        <!--/*@thymesVar id="klient.email" type="String"*/-->
+        <!--/*@thymesVar id="klient.telefon" type="int"*/-->
+        <!--/*@thymesVar id="zwierze.nazwa" type="String"*/-->
+        <!--/*@thymesVar id="zwierze.typ" type="String"*/-->
+        <!--/*@thymesVar id="zwierze.wiek" type="int"*/-->
+        <!--/*@thymesVar id="wizyta.opis" type="String"*/-->
+        <!--/*@thymesVar id="wizyta.data" type="java.util.Formatter.DateTime"*/-->
         <form action="#" th:action="@{/addedKlient}" th:object="${Klient}" method="post">
-            <p>Imie: <input type="text" th:value="${imie}" name="imie" id="imie"/></p>
-            <p>Nazwisko: <input type="text" th:value="${nazwisko}" name="nazwisko" id="nazwisko"/></p>
-            <p>Telefon: <input type="text" th:value="${telefon}" name="telefon" id="telefon"/></p>
-            <p>E-mail: <input type="text" th:value="${email}" name="email" id="emali"/></p>
-            <p>Imie zwierzęcia: <input type="text" th:value="${zwierze_imie}" name="zwierze_imie" id="zwierze_imie"></p>
-            <p>Typ zwierzęcia: <input type="text" th:value="${zwierze_typ}" name="zwierze_rasa" id="zwierze_rasa"></p>
-            <p>Wiek zwierzęcia: <input type="text" th:value="${zwierze_wiek}" name="zwierze_wiek" id="zwierze_wiek"></p></p>
-            <p>Opis problemu: <input type="text" th:value="${zgloszenie_problem}" name="zgloszenie_problem" id="zgloszenie_problem"></p>
-            <p>Preferowana data i godzina wizyty: <input type="datetime-local" th:value="${zgloszenie_data}" name="zgloszenie_data" id="zgloszenie_data" min="2020-12-01T00:00" max="2021-12-31T18:00" step="900"></p>
+            <p> <label for="imie">Imie:</label><input type="text" th:value="${Klient.imie}" name="imie" id="imie"/></p>
+            <p><label for="nazwisko">Nazwisko: </label><input type="text" th:value="${Klient.nazwisko}" name="nazwisko" id="nazwisko"/></p>
+            <p><label for="telefon">Telefon: </label><input type="text" th:value="${Klient.telefon}" name="telefon" id="telefon"/></p>
+            <p><label for="emali">E-mail: </label><input type="text" th:value="${Klient.email}" name="email" id="emali"/></p>
+            <p><label for="zwierze_imie">Imie zwierzęcia: </label><input type="text" th:value="${Zwierze.nazwa}" name="zwierze_imie" id="zwierze_imie"></p>
+            <p><label for="zwierze_rasa">Typ zwierzęcia: </label><input type="text" th:value="${Zwierze.typ}" name="zwierze_rasa" id="zwierze_rasa"></p>
+            <p><label for="zwierze_wiek">Wiek zwierzęcia: </label><input type="text" th:value="${Zwierze.wiek}" name="zwierze_wiek" id="zwierze_wiek"></p>
+            <p><label for="zgloszenie_problem">Opis problemu: </label><input type="text" th:value="${Wizyta.opis}" name="zgloszenie_problem" id="zgloszenie_problem"></p>
+            <p><label for="zgloszenie_data">Preferowana data i godzina wizyty: </label><input type="datetime-local" th:value="${Wizyta.data}" name="zgloszenie_data" id="zgloszenie_data" min="2020-12-01T00:00" max="2021-12-31T18:00" step="900"></p>
             <p><input type="submit" value="Wyslij zgloszenie"></p>
             <p><input type="reset" value="Zresetuj pola"></p>
         </form>

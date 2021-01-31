@@ -11,24 +11,43 @@ public class Zwierze {
     @GeneratedValue
     private Long id;
     private String nazwa;
+    private String typ;
     private int wiek;
-    private int wlasciciel_id;
+    private Long klient_id;
 
-    public Zwierze(Long id, String nazwa, int wiek, int wlasciciel_id) {
+    public Zwierze(Long id, String nazwa, String typ, int wiek, Long klient_id) {
         this.id = id;
         this.nazwa = nazwa;
+        this.typ = typ;
         this.wiek = wiek;
-        this.wlasciciel_id = wlasciciel_id;
+        this.klient_id = klient_id;
     }
 
-    public Zwierze(String nazwa, int wiek, int wlasciciel_id) {
+    public Zwierze(String nazwa, String typ, int wiek, Long klient_id) {
         this.nazwa = nazwa;
+        this.typ = typ;
         this.wiek = wiek;
-        this.wlasciciel_id = wlasciciel_id;
+        this.klient_id = klient_id;
     }
 
     public Zwierze() {
 
+    }
+
+    public String getTyp() {
+        return typ;
+    }
+
+    public void setTyp(String typ) {
+        this.typ = typ;
+    }
+
+    public Long getKlient_id() {
+        return klient_id;
+    }
+
+    public void setKlient_id(Long klient_id) {
+        this.klient_id = klient_id;
     }
 
     public void setId(Long id) {
@@ -43,8 +62,8 @@ public class Zwierze {
         this.wiek = wiek;
     }
 
-    public void setWlasciciel_id(int wlasciciel_id) {
-        this.wlasciciel_id = wlasciciel_id;
+    public void setWlasciciel_id(Long wlasciciel_id) {
+        this.klient_id = wlasciciel_id;
     }
 
     public Long getId() {
@@ -59,7 +78,7 @@ public class Zwierze {
         return wiek;
     }
 
-    public int getWlasciciel_id() {
-        return wlasciciel_id;
+    public Long getWlasciciel_id() {
+        return klient_id;
     }
 }
