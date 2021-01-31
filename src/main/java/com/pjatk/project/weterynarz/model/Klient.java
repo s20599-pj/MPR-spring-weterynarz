@@ -2,20 +2,19 @@ package com.pjatk.project.weterynarz.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Klient {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String imie;
     private String nazwisko;
     private int telefon;
     private String email;
-    private Long wizyty_id;
-    private Long zwierze_id;
 
     public Klient(String imie, String nazwisko, int telefon, String email) {
         this.imie = imie;
@@ -27,17 +26,8 @@ public class Klient {
     public Klient() {
     }
 
-    public Klient(String imie, String nazwisko, int telefon, String email, Long wizyty_id, Long zwierze_id) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.telefon = telefon;
-        this.email = email;
-        this.wizyty_id = wizyty_id;
-        this.zwierze_id = zwierze_id;
-    }
-
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -45,7 +35,7 @@ public class Klient {
     }
 
     public String getImie() {
-        return imie;
+        return this.imie;
     }
 
     public void setImie(String imie) {
@@ -53,7 +43,7 @@ public class Klient {
     }
 
     public String getNazwisko() {
-        return nazwisko;
+        return this.nazwisko;
     }
 
     public void setNazwisko(String nazwisko) {
@@ -61,7 +51,7 @@ public class Klient {
     }
 
     public int getTelefon() {
-        return telefon;
+        return this.telefon;
     }
 
     public void setTelefon(int telefon) {
@@ -69,26 +59,10 @@ public class Klient {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Long getWizyty_id() {
-        return wizyty_id;
-    }
-
-    public void setWizyty_id(Long wizyty_id) {
-        this.wizyty_id = wizyty_id;
-    }
-
-    public Long getZwierze_id() {
-        return zwierze_id;
-    }
-
-    public void setZwierze_id(Long zwierze_id) {
-        this.zwierze_id = zwierze_id;
     }
 }

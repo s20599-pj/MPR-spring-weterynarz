@@ -8,7 +8,7 @@
 <body>
 <div id="container">
     <div id="header">
-        <a href="/">Gaja Zoo</a>
+        <a href="/">Gaia Zoo</a>
         <ul id="menu">
             <li class="menu-part"><a th:href="opis.html">O nas</a></li>
             <li class="menu-part"><a href="cennik.html">Cennik</a></li>
@@ -29,16 +29,16 @@
         <!--/*@thymesVar id="zwierze.wiek" type="int"*/-->
         <!--/*@thymesVar id="wizyta.opis" type="String"*/-->
         <!--/*@thymesVar id="wizyta.data" type="java.util.Formatter.DateTime"*/-->
-        <form action="#" th:action="@{/addedKlient}" th:object="${Klient}" method="post">
-            <p> <label for="imie">Imie:</label><input type="text" th:value="${Klient.imie}" name="imie" id="imie"/></p>
-            <p><label for="nazwisko">Nazwisko: </label><input type="text" th:value="${Klient.nazwisko}" name="nazwisko" id="nazwisko"/></p>
-            <p><label for="telefon">Telefon: </label><input type="text" th:value="${Klient.telefon}" name="telefon" id="telefon"/></p>
-            <p><label for="emali">E-mail: </label><input type="text" th:value="${Klient.email}" name="email" id="emali"/></p>
-            <p><label for="zwierze_imie">Imie zwierzęcia: </label><input type="text" th:value="${Zwierze.nazwa}" name="zwierze_imie" id="zwierze_imie"></p>
-            <p><label for="zwierze_rasa">Typ zwierzęcia: </label><input type="text" th:value="${Zwierze.typ}" name="zwierze_rasa" id="zwierze_rasa"></p>
-            <p><label for="zwierze_wiek">Wiek zwierzęcia: </label><input type="text" th:value="${Zwierze.wiek}" name="zwierze_wiek" id="zwierze_wiek"></p>
-            <p><label for="zgloszenie_problem">Opis problemu: </label><input type="text" th:value="${Wizyta.opis}" name="zgloszenie_problem" id="zgloszenie_problem"></p>
-            <p><label for="zgloszenie_data">Preferowana data i godzina wizyty: </label><input type="datetime-local" th:value="${Wizyta.data}" name="zgloszenie_data" id="zgloszenie_data" min="2020-12-01T00:00" max="2021-12-31T18:00" step="900"></p>
+        <form action="#" th:action="@{kontakt}" method="post">
+            <p><label for="Klient.imie">Imie:</label><input type="text" th:field="${Klient.imie}" name="Klient.imie" id="Klient.imie"/></p>
+            <p><label for="Klient.nazwisko">Nazwisko: </label><input type="text" th:field="${Klient.nazwisko}" name="Klient.nazwisko" id="Klient.nazwisko"/></p>
+            <p><label for="Klient.telefon">Telefon: </label><input type="text" th:field="${Klient.telefon}" name="Klient.telefon" id="Klient.telefon"/></p>
+            <p><label for="Klient.email">E-mail: </label><input type="text" th:field="${Klient.email}" name="Klient.email" id="Klient.email"/></p>
+            <p><label for="zwierze_imie">Imie zwierzęcia: </label><input type="text" th:field="${Zwierze.nazwa}" name="zwierze_imie" id="zwierze_imie"></p>
+            <p><label for="zwierze_rasa">Typ zwierzęcia: </label><input type="text" th:field="${Zwierze.typ}" name="zwierze_rasa" id="zwierze_rasa"></p>
+            <p><label for="zwierze_wiek">Wiek zwierzęcia: </label><input type="text" th:field="${Zwierze.wiek}" name="zwierze_wiek" id="zwierze_wiek"></p>
+            <p><label for="zgloszenie_problem">Opis problemu: </label><input type="text" th:field="${Wizyta.opis}" name="zgloszenie_problem" id="zgloszenie_problem"></p>
+            <p><label for="zgloszenie_data">Preferowana data i godzina wizyty: </label><input type="date" th:field="${Wizyta.data}" name="zgloszenie_data" id="zgloszenie_data" min="2020-12-01" max="2021-12-31"></p>
             <p><input type="submit" value="Wyslij zgloszenie"></p>
             <p><input type="reset" value="Zresetuj pola"></p>
         </form>

@@ -1,8 +1,8 @@
 package com.pjatk.project.weterynarz.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,6 +11,8 @@ public class Wizyta {
     @Id
     @GeneratedValue
     private Long id;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
     private String opis;
     private Long klient_id;

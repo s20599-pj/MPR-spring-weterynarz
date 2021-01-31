@@ -24,14 +24,18 @@ public class FirstController {
     private ZwierzeService zwierzeService;
     private WizytaService wizytaService;
 
-    public FirstController(UserService userService){
+    public FirstController(UserService userService, KlientService klientService, ZwierzeService zwierzeService, WizytaService wizytaService){
         this.userService = userService;
+        this.klientService = klientService;
+        this.zwierzeService = zwierzeService;
+        this.wizytaService = wizytaService;
     }
 
     @RequestMapping("/kontakt")
-    public String goToContact(){
+    public String goToContact(@ModelAttribute("Klient") Klient klient, @ModelAttribute("Zwierze") Zwierze zwierze, @ModelAttribute("Wizyta") Wizyta wizyta){
         return "kontakt";
     }
+
     @RequestMapping("/opis")
     public String goToOpis(){
         return "opis";
@@ -45,10 +49,11 @@ public class FirstController {
         return "uslugi";
     }
 
-    @PostMapping("/addedKlient")
-    public ResponseEntity<String> addKlient(@ModelAttribute("Klient") Klient klient, @ModelAttribute("Zwierze") Zwierze zwierze, @ModelAttribute("Wizyta") Wizyta wizyta){
-        klientService.createKlient(new Klient(klient.getImie(),klient.getNazwisko(), klient.getTelefon(), klient.getEmail()));
+    @PostMapping("/kontakt")
+    public ResponseEntity<String> addKlient(@ModelAttribute("Klient") Klient klient, @ModelAttribute("Zwierze") Zwierze zwierze,@ModelAttribute("Wizyta") Wizyta wizyta){
+        klientService.createKlient(klient);
         zwierzeService.addZwierze(new Zwierze(zwierze.getNazwa(), zwierze.getTyp(), zwierze.getWiek(), klient.getId()));
+        wizytaService.addWizyta(new Wizyta(wizyta.getData(), wizyta.getOpis(),klient.getId()));
         return ResponseEntity.ok("Dodano uzytkownika");
     }
 
