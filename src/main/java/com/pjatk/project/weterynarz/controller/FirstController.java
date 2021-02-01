@@ -1,34 +1,28 @@
 package com.pjatk.project.weterynarz.controller;
 
 import com.pjatk.project.weterynarz.model.Klient;
-import com.pjatk.project.weterynarz.model.User;
 import com.pjatk.project.weterynarz.model.Wizyta;
 import com.pjatk.project.weterynarz.model.Zwierze;
-import com.pjatk.project.weterynarz.services.KlientService;
-import com.pjatk.project.weterynarz.services.UserService;
-import com.pjatk.project.weterynarz.services.WizytaService;
-import com.pjatk.project.weterynarz.services.ZwierzeService;
+import com.pjatk.project.weterynarz.services.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/")
 public class FirstController {
 
-    private UserService userService;
     private KlientService klientService;
     private ZwierzeService zwierzeService;
     private WizytaService wizytaService;
+    private UslugiService uslugiService;
 
-    public FirstController(UserService userService, KlientService klientService, ZwierzeService zwierzeService, WizytaService wizytaService){
-        this.userService = userService;
+    public FirstController(KlientService klientService, ZwierzeService zwierzeService, WizytaService wizytaService, UslugiService uslugiService){
         this.klientService = klientService;
         this.zwierzeService = zwierzeService;
         this.wizytaService = wizytaService;
+        this.uslugiService = uslugiService;
     }
 
     @RequestMapping("/kontakt")
@@ -40,21 +34,26 @@ public class FirstController {
     public String goToOpis(){
         return "opis";
     }
+
     @RequestMapping("/cennik")
-    public String goToCennik(){
+    public String goToCennik(Model model){
+        model.addAttribute("uslugi", uslugiService.findAllUslugi());
         return "cennik";
     }
-    @RequestMapping("/uslugi")
-    public String goToUslugi(){
+
+    @GetMapping("/uslugi")
+    public String goToUslugi(Model model)
+    {
+        model.addAttribute("uslugi", uslugiService.findAllUslugi());
         return "uslugi";
     }
 
     @PostMapping("/kontakt")
-    public ResponseEntity<String> addKlient(@ModelAttribute("Klient") Klient klient, @ModelAttribute("Zwierze") Zwierze zwierze,@ModelAttribute("Wizyta") Wizyta wizyta){
+    public String addKlient(@ModelAttribute("Klient") Klient klient, @ModelAttribute("Zwierze") Zwierze zwierze,@ModelAttribute("Wizyta") Wizyta wizyta){
         klientService.createKlient(klient);
         zwierzeService.addZwierze(new Zwierze(zwierze.getNazwa(), zwierze.getTyp(), zwierze.getWiek(), klient.getId()));
         wizytaService.addWizyta(new Wizyta(wizyta.getData(), wizyta.getOpis(),klient.getId()));
-        return ResponseEntity.ok("Dodano uzytkownika");
+        return "successful";
     }
 
 
@@ -63,14 +62,4 @@ public class FirstController {
         return ResponseEntity.ok("Gabinet Weterynaryjny");
     }
 
-    @GetMapping("/getUsers")
-    public ResponseEntity<List<User>> findAllUsers(){
-        return ResponseEntity.ok(userService.findAllUsers());
-    }
-
-    @PostMapping("/saveuser")
-    public ResponseEntity<String> createUser(@RequestBody User user){
-        userService.createUser(user);
-        return ResponseEntity.ok("Dodano uzytkownika");
-    }
 }

@@ -16,6 +16,11 @@ public class Uslugi {
     public Uslugi() {
     }
 
+    public Uslugi(String nazwa, float cena) {
+        this.nazwa = nazwa;
+        this.cena = cena;
+    }
+
     public Uslugi(Long id, String nazwa, float cena) {
         this.id = id;
         this.nazwa = nazwa;

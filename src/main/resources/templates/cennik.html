@@ -17,7 +17,22 @@
         </ul>
     </div>
     <div id="content">
-        Tutaj znajduje sie fajny opis naszego gabinetu
+        Tutaj bedzie fajny cennik usług
+        <table>
+            <thead>
+                <th>Usługa</th>
+                <th>Cena</th>
+            </thead>
+            <tbody>
+                <tr th:if="${#strings.isEmpty(uslugi)}">
+                    <td colspan="2"> Brak dostępnych usług :(</td>
+                </tr>
+                <tr th:each="usluga : ${uslugi}">
+                    <td><span th:text="${usluga.nazwa}">Usługa</span></td>
+                    <td><span th:text="${usluga.cena}">Cena</span></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div id="footer">
         Regulamin | <a href="login.html">Gaja zoo</a> | Kamil Romiński C 2021

@@ -10,9 +10,9 @@
     <div id="header">
         <a href="/">Gaia Zoo</a>
         <ul id="menu">
-            <li class="menu-part"><a th:href="opis.html">O nas</a></li>
-            <li class="menu-part"><a href="cennik.html">Cennik</a></li>
-            <li class="menu-part"><a href="uslugi.html">Usługi</a></li>
+            <li class="menu-part"><a th:href="@{opis}">O nas</a></li>
+            <li class="menu-part"><a th:href="@{cennik}">Cennik</a></li>
+            <li class="menu-part"><a th:href="@{uslugi}">Usługi</a></li>
             <li class="menu-part"><a th:href="@{kontakt}">Kontakt</a></li>
         </ul>
     </div>
@@ -38,7 +38,7 @@
             <p><label for="zwierze_rasa">Typ zwierzęcia: </label><input type="text" th:field="${Zwierze.typ}" name="zwierze_rasa" id="zwierze_rasa"></p>
             <p><label for="zwierze_wiek">Wiek zwierzęcia: </label><input type="text" th:field="${Zwierze.wiek}" name="zwierze_wiek" id="zwierze_wiek"></p>
             <p><label for="zgloszenie_problem">Opis problemu: </label><input type="text" th:field="${Wizyta.opis}" name="zgloszenie_problem" id="zgloszenie_problem"></p>
-            <p><label for="zgloszenie_data">Preferowana data i godzina wizyty: </label><input type="date" th:field="${Wizyta.data}" name="zgloszenie_data" id="zgloszenie_data" min="2020-12-01" max="2021-12-31"></p>
+            <p><label for="zgloszenie_data">Preferowana data i godzina wizyty: </label><input type="datetime-local" th:field="${Wizyta.data}" name="zgloszenie_data" id="zgloszenie_data" min="2020-12-01" max="2021-12-31"></p>
             <p><input type="submit" value="Wyslij zgloszenie"></p>
             <p><input type="reset" value="Zresetuj pola"></p>
         </form>

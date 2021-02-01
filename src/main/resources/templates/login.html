@@ -18,8 +18,10 @@
     </div>
     <div id="content">
         <!--/*@thymesVar id="Klient" type="com.pjatk.project.weterynarz.model.Klient"*/-->
-        <form action="#" th:action="@{/addedKlient}" th:object="${Klient}" method="post">
-
+        <form action="login" th:action="@{/panel}" method="post">
+            <p><label for="username">Login: </label><input type="text" id="username" name="username" value="" /></p>
+            <p><label for="password">Haslo: </label><input type="password" id="password" name="password" /></p>
+            <input type="submit" name="login" id="login" value="Zaloguj się" />
         </form>
     </div>
     <div id="footer">

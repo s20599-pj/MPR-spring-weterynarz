@@ -11,8 +11,8 @@ public class Wizyta {
     @Id
     @GeneratedValue
     private Long id;
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date data;
     private String opis;
     private Long klient_id;
@@ -48,7 +48,7 @@ public class Wizyta {
     }
 
     public Date getData() {
-        return data;
+        return this.data;
     }
 
     public void setData(Date data) {
