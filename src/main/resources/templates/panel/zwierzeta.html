@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
+      lang="pl-PL">
+<head>
+    <title>Gabinet Weterynaryjny</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <a href="/">Gaia Zoo</a>
+        <ul id="menu">
+            <li class="menu-part"><a th:href="@{pracownik}">Pracownicy</a></li>
+            <li class="menu-part"><a th:href="@{dodajUslugi}">Dodaj Usługi</a></li>
+            <li class="menu-part"><a th:href="@{klienci}">Sprawdź klientów</a></li>
+            <li class="menu-part"><a th:href="@{wizyty}">Sprawdź dzisiejsze wizyty</a></li>
+            <li class="menu-part"><a th:href="@{zwierzeta}">Sprawdź wszystkie zwierzęta</a></li>
+            <li class="menu-part"><a th:href="@{/logout}">wyloguj</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <table>
+            <thead>
+                <th>Nazwa</th>
+                <th>Wiek</th>
+                <th>Typ</th>
+            </thead>
+            <tbody>
+                <tr th:if="${#strings.isEmpty(zwierze)}">
+                    <td colspan="3"> Brak zwierząt w systemie :(</td>
+                </tr>
+                <tr th:each="zwierzeta : ${zwierze}">
+                    <td><span th:text="${zwierzeta.nazwa}">Usługa</span></td>
+                    <td><span th:text="${zwierzeta.wiek}">Cena</span></td>
+                    <td><span th:text="${zwierzeta.typ}">Cena</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="footer">
+        <a th:href="@{regulamin}">Regulamin</a> | <a th:href="@{pracownik}">Gaia zoo</a> | Kamil Romiński © 2021
+    </div>
+</div>
+</body>
+</html>

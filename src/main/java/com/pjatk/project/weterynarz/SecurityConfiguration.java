@@ -35,7 +35,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/kontakt").permitAll()
                 .antMatchers("/uslugi").permitAll()
                 .antMatchers("/opis").permitAll()
-                .antMatchers("/panel").hasRole("PRACOWNIK")
+                .antMatchers("/pracownik").hasRole("PRACOWNIK")
+                .antMatchers("/zwierzeta").hasRole("PRACOWNIK")
+                .antMatchers("/dodajUslugi").hasRole("PRACOWNIK")
+                .antMatchers("/klienci").hasRole("PRACOWNIK")
+                .antMatchers("/wizyty").hasRole("PRACOWNIK")
                 .and().formLogin();
     }
 

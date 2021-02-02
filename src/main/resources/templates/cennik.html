@@ -8,7 +8,7 @@
 <body>
 <div id="container">
     <div id="header">
-        <a href="/">Gaja Zoo</a>
+        <a href="/">Gaia Zoo</a>
         <ul id="menu">
             <li class="menu-part"><a href="opis">O nas</a></li>
             <li class="menu-part"><a href="cennik">Cennik</a></li>
@@ -28,14 +28,14 @@
                     <td colspan="2"> Brak dostępnych usług :(</td>
                 </tr>
                 <tr th:each="usluga : ${uslugi}">
-                    <td><span th:text="${usluga.nazwa}">Usługa</span></td>
+                    <td><span th:text="${usluga.nazwa}">Nazwa</span></td>
                     <td><span th:text="${usluga.cena}">Cena</span></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div id="footer">
-        Regulamin | <a href="login.html">Gaja zoo</a> | Kamil Romiński C 2021
+        <a th:href="@{regulamin}">Regulamin</a> | <a th:href="@{pracownik}">Gaia zoo</a> | Kamil Romiński © 2021
     </div>
 </div>
 </body>

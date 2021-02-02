@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
+      lang="pl-PL">
+<head>
+    <title>Gabinet Weterynaryjny</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <a href="/">Gaia Zoo</a>
+        <ul id="menu">
+            <li class="menu-part"><a th:href="@{pracownik}">Pracownicy</a></li>
+            <li class="menu-part"><a th:href="@{dodajUslugi}">Dodaj Usługi</a></li>
+            <li class="menu-part"><a th:href="@{klienci}">Sprawdź klientów</a></li>
+            <li class="menu-part"><a th:href="@{wizyty}">Sprawdź dzisiejsze wizyty</a></li>
+            <li class="menu-part"><a th:href="@{zwierzeta}">Sprawdź wszystkie zwierzęta</a></li>
+            <li class="menu-part"><a th:href="@{/logout}">wyloguj</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <form action="#" th:action="@{dodajUslugi}" method="post">
+            <p><label for="Uslugi.nazwa">Nazwa: </label><input type="text" th:field="${Uslugi.nazwa}" name="Uslugi.nazwa" id="Uslugi.nazwa"/></p>
+            <p><label for="Uslugi.cena">Cena: </label><input type="text" th:field="${Uslugi.cena}" name="Uslugi.cena" id="Uslugi.cena"/></p>
+            <p><input type="submit" value="Dodaj usługę"></p>
+            <p><input type="reset" value="Zresetuj pola"></p>
+    </div>
+    <div id="footer">
+        <a th:href="@{regulamin}">Regulamin</a> | <a th:href="@{pracownik}">Gaia zoo</a> | Kamil Romiński © 2021
+    </div>
+</div>
+</body>
+</html>
