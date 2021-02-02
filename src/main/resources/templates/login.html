@@ -19,6 +19,12 @@
     <div id="content">
         <!--/*@thymesVar id="Klient" type="com.pjatk.project.weterynarz.model.Klient"*/-->
         <form action="login" th:action="@{/panel}" method="post">
+            <div th:if="${param.error}" class="alert alert-error">
+                Błędny login lub haslo
+            </div>
+            <div th:if="${param.logout}" class="alert logout">
+                Zostałeś/aś pomyślnie wylogowany/a
+            </div>
             <p><label for="username">Login: </label><input type="text" id="username" name="username" value="" /></p>
             <p><label for="password">Haslo: </label><input type="password" id="password" name="password" /></p>
             <input type="submit" name="login" id="login" value="Zaloguj się" />

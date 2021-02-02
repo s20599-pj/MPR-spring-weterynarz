@@ -11,18 +11,23 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/")
-public class FirstController {
+public class UserController {
 
     private KlientService klientService;
     private ZwierzeService zwierzeService;
     private WizytaService wizytaService;
     private UslugiService uslugiService;
 
-    public FirstController(KlientService klientService, ZwierzeService zwierzeService, WizytaService wizytaService, UslugiService uslugiService){
+    public UserController(KlientService klientService, ZwierzeService zwierzeService, WizytaService wizytaService, UslugiService uslugiService){
         this.klientService = klientService;
         this.zwierzeService = zwierzeService;
         this.wizytaService = wizytaService;
         this.uslugiService = uslugiService;
+    }
+
+    @RequestMapping("/login")
+    public String goToLogin(){
+        return "login";
     }
 
     @RequestMapping("/kontakt")

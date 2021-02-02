@@ -16,6 +16,26 @@ public class Pracownik {
     private String haslo;
     private int telefon;
     private String email;
+    private String rola;
+
+
+    public Pracownik(String imie, String nazwisko, String login, String haslo, int telefon, String email, String rola) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.login = login;
+        this.haslo = haslo;
+        this.telefon = telefon;
+        this.email = email;
+        this.rola = rola;
+    }
+
+    public String getRola() {
+        return rola;
+    }
+
+    public void setRola(String rola) {
+        this.rola = rola;
+    }
 
     public Pracownik(String imie, String nazwisko, String login, String haslo, int telefon, String email) {
         this.imie = imie;
