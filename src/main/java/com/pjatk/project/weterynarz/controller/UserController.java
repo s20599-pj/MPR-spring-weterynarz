@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 @Controller
 @RequestMapping("/")
@@ -53,6 +55,11 @@ public class UserController {
         return "successful";
     }
 
+    @RequestMapping("/regulamin")
+    public String goToRegulamin(){
+        return "regulamin";
+    }
+
     @RequestMapping("/kontakt")
     public String goToContact(@ModelAttribute("Klient") Klient klient, @ModelAttribute("Zwierze") Zwierze zwierze, @ModelAttribute("Wizyta") Wizyta wizyta){
         return "kontakt";
@@ -62,14 +69,6 @@ public class UserController {
     public String goToKlienci(Model model){
         model.addAttribute("klienci", klientService.findAllKlient());
         return "panel/klienci";
-    }
-    @RequestMapping("/wizyty")
-    public String goToWizyty(Model model){
-        model.addAttribute("currentDate", LocalDate.now());
-        model.addAttribute("klient", klientService.findAllKlient());
-        model.addAttribute("zwierze", zwierzeService.findAllZwierze());
-        model.addAttribute("wizyta", wizytaService.findAllWizyta());
-        return "panel/wizyty";
     }
 
     @RequestMapping("/opis")

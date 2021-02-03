@@ -1,11 +1,20 @@
+@font-face {
+    font-family: Lato;
+    src: url("Lato-Regular.ttf");
+}
 body{
     margin: 0;
     padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #DAEAED;
+    font-family: Lato;
 }
 #container{
     margin: 0;
-    width: 1920px;
-    height: 1080px;
+    width: 100vw;
+    height: 100vh;
+    float: left;
 }
 #tekst{
     clear: both;
@@ -14,25 +23,97 @@ body{
 }
 #menu{
     list-style-type: none;
+    height: 90vh;
+    width: 10vw;
+    padding-left: 1.5vw;
 }
 .menu-part{
-    float: left;
     display: block;
-    padding-right: 50px;
+    height: 5vh;
+    line-height: 40px;
     text-align: center;
-    line-height: 5px;
+    border: 1px solid black;
+    margin-top: 2vh;
+    font-size: 17px;
+    font-weight: bold;
+}
+.menu-part a:visited{
+    color: black;
+    text-decoration: none;
+}
+.menu-part a{
+    text-decoration: none;
 }
 #header{
-    background-color: green;
-    width: 100%;
-    height: 10%;
+    background-color: #148985;
+    width: 100vw;
+    height: 10vh;
 }
 #content{
-    width: 100%;
-    height: 80%;
-    background-color: red;
+    width: 49vw;
+    height: 85vh;
+    float: left;
+    padding-left: 2.5vw;
+    padding-right: 35vw;
+    text-align: justify;
+}
+#content-regulamin{
+    width: 82vw;
+    height: 85vh;
+    float: left;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    text-align: justify;
 }
 #footer{
-    width: 100%;
-    height: 10%;
+    width: 100vw;
+    height: 5vh;
+    clear: both;
+    background-color: #57AFB5;
+    text-align: center;
+}
+#loginpage{
+    color: black;
+    text-decoration: none;
+}
+#loginpage:visited{
+    color: black;
+    text-decoration: none;
+}
+#regulamin{
+    color: black;
+}
+#regulamin:visited{
+    color: black;
+}
+#verticalmenu{
+    background-color: #9BD0D1;
+    width: 13vw;
+    height: 85vh;
+    float: left;
+}
+.header-item{
+    display: block;
+    width: 33vw;
+    height: 10vh;
+    float: left;
+}
+#middle{
+    height: 85vh;
+}
+#title{
+    margin: 0;
+    text-align: center;
+    line-height: 80px;
+}
+#contact{
+    text-align: right;
+}
+#title{
+    font-weight: bold;
+    font-size: 30px;
+}
+.contact-content {
+    font-size: 25px;
+    margin: 8px 0 0 0;
 }

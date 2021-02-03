@@ -8,16 +8,24 @@
     <body>
         <div id="container">
             <div id="header">
-                <a href="/">Gaia Zoo</a>
-                <ul id="menu">
-                    <li class="menu-part"><a th:href="@{pracownik}">Pracownicy</a></li>
-                    <li class="menu-part"><a th:href="@{dodajUslugi}">Dodaj Usługi</a></li>
-                    <li class="menu-part"><a th:href="@{klienci}">Sprawdź klientów</a></li>
-                    <li class="menu-part"><a th:href="@{wizyty}">Sprawdź dzisiejsze wizyty</a></li>
-                    <li class="menu-part"><a th:href="@{zwierzeta}">Sprawdź wszystkie zwierzęta</a></li>
-                    <li class="menu-part"><a th:href="@{/logout}">wyloguj</a></li>
-                </ul>
+                <a href="/" class="header-item">tutej logo</a>
+                <p class="header-item" id="title">Gaia Zoo</p>
+                <div id="contact" class="header-item">
+                    <p class="contact-content">nr telefonu</p>
+                    <p class="contact-content">adres</p>
+                </div>
             </div>
+                <div id="middle">
+                    <div id="verticalmenu">
+                        <ul id="menu">
+                            <li class="menu-part"><a th:href="@{pracownik}">Pracownicy</a></li>
+                            <li class="menu-part"><a th:href="@{dodajUslugi}">Dodaj Usługi</a></li>
+                            <li class="menu-part"><a th:href="@{klienci}">Sprawdź klientów</a></li>
+                            <li class="menu-part"><a th:href="@{zwierzeta}">Sprawdź wszystkie zwierzęta</a></li>
+                            <li class="menu-part"><a th:href="@{/logout}">Wyloguj</a></li>
+                        </ul>
+                    </div>
+                </div>
             <div id="content">
                 <table>
                     <thead>
@@ -27,15 +35,15 @@
                         <th>Telefon</th>
                     </thead>
                     <tbody>
-                    <tr th:if="${#strings.isEmpty(pracownik)}">
-                        <td colspan="4"> Brak pracowników :(</td>
-                    </tr>
-                    <tr th:each="pracownicy : ${pracownik}">
-                        <td><span th:text="${pracownicy.imie}">Imie</span></td>
-                        <td><span th:text="${pracownicy.nazwisko}">Nazwisko</span></td>
-                        <td><span th:text="${pracownicy.email}">Email</span></td>
-                        <td><span th:text="${pracownicy.telefon}">Telefon</span></td>
-                    </tr>
+                        <tr th:if="${#strings.isEmpty(pracownik)}">
+                            <td colspan="4"> Brak pracowników :(</td>
+                        </tr>
+                        <tr th:each="pracownicy : ${pracownik}">
+                            <td><span th:text="${pracownicy.imie}">Imie</span></td>
+                            <td><span th:text="${pracownicy.nazwisko}">Nazwisko</span></td>
+                            <td><span th:text="${pracownicy.email}">Email</span></td>
+                            <td><span th:text="${pracownicy.telefon}">Telefon</span></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

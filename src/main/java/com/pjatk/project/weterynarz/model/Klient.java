@@ -1,9 +1,7 @@
 package com.pjatk.project.weterynarz.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Klient {
@@ -15,6 +13,7 @@ public class Klient {
     private String nazwisko;
     private int telefon;
     private String email;
+
 
     public Klient(String imie, String nazwisko, int telefon, String email) {
         this.imie = imie;

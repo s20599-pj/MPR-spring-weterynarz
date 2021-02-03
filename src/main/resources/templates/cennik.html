@@ -8,14 +8,22 @@
 <body>
 <div id="container">
     <div id="header">
-        <a href="/">Gaia Zoo</a>
-        <ul id="menu">
-            <li class="menu-part"><a href="opis">O nas</a></li>
-            <li class="menu-part"><a href="cennik">Cennik</a></li>
-            <li class="menu-part"><a href="uslugi">Usługi</a></li>
-            <li class="menu-part"><a href="/kontakt">Kontakt</a></li>
-        </ul>
+        <a href="/" class="header-item">tutej logo</a>
+        <p class="header-item" id="title">Gaia Zoo</p>
+        <div id="contact" class="header-item">
+            <p class="contact-content">nr telefonu</p>
+            <p class="contact-content">adres</p>
+        </div>
     </div>
+    <div id="middle">
+        <div id="verticalmenu">
+            <ul id="menu">
+                <li class="menu-part"><a th:href="@{opis}">O nas</a></li>
+                <li class="menu-part"><a th:href="@{uslugi}">Usługi</a></li>
+                <li class="menu-part"><a th:href="@{cennik}">Cennik</a></li>
+                <li class="menu-part"><a th:href="@{kontakt}">Kontakt</a></li>
+            </ul>
+        </div>
     <div id="content">
         Tutaj bedzie fajny cennik usług
         <table>

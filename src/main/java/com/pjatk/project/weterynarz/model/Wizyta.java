@@ -9,13 +9,14 @@ import java.util.Date;
 public class Wizyta {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date data;
     private String opis;
     private Long klient_id;
+
 
     public Wizyta(Date data, String opis) {
         this.data = data;
