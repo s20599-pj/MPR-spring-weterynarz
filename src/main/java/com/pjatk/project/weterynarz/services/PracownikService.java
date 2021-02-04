@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PracownikService {
@@ -23,7 +22,5 @@ public class PracownikService {
         return pracownikRepository.findAll();
     }
 
-    public Optional<Pracownik> findByImie(String imie){
-        return pracownikRepository.getPracownikByImie(imie);
-    }
+
 }

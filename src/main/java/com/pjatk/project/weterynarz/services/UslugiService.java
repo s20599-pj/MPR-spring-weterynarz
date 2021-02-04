@@ -19,8 +19,8 @@ public class UslugiService {
     }
 
     public String addUslugi(Uslugi uslugi){
-        if(uslugi.getNazwa() == null || uslugi.getCena() == 0){
-            return "bladdanych";
+        if(uslugi.getNazwa() == "" || uslugi.getCena() <= 0){
+            return "bladdanychuser";
         }
         else{
             uslugiRepository.save(uslugi);

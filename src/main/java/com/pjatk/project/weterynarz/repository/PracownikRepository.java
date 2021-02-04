@@ -10,8 +10,6 @@ import java.util.Optional;
 @Repository
 public interface PracownikRepository extends JpaRepository<Pracownik, Long> {
 
-    @Query("Select p from Pracownik p where p.imie = :imie")
-    Optional<Pracownik> getPracownikByImie(String imie);
 
 
     Optional<Pracownik> findByLogin(String login);

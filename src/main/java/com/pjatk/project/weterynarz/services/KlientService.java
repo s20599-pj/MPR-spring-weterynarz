@@ -23,7 +23,7 @@ public class KlientService {
             if(klient.getEmail().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$") == false){
                 return "bladdanychuser";
             }
-            if(klient.getTelefon() < 99999999 || klient.getTelefon() > 1000000000){
+            if(klient.getTelefon() < 100000000 || klient.getTelefon() > 999999999){
                 return "bladdanychuser";
             }
             else {
