@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
       lang="pl-PL">
-<head>
-    <title>Gabinet Weterynaryjny</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
-<body>
-<div id="container">
-    <div id="header">
-        <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
-        <p class="header-item" id="title">GAIA ZOO</p>
-        <div id="contact" class="header-item">
-            <p class="contact-content">+48 652 85 42</p>
-            <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
+    <head>
+        <title>Gabinet Weterynaryjny</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
+                <p class="header-item" id="title">GAIA ZOO</p>
+                <div id="contact" class="header-item">
+                    <p class="contact-content">+48 652 85 42</p>
+                    <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
+                </div>
+            </div>
+            <div id="middle">
+                <div id="verticalmenu">
+                    <ul id="menu">
+                        <li class="menu-part"><a th:href="@{opis}">O NAS</a></li>
+                        <li class="menu-part"><a th:href="@{uslugi}">USŁUGI</a></li>
+                        <li class="menu-part"><a th:href="@{cennik}">CENNIK</a></li>
+                        <li class="menu-part"><a th:href="@{kontakt}">KONTAKT</a></li>
+                    </ul>
+                </div>
+            <div id="content-cennik">
+                <h1>Cennik</h1>
+                <table>
+                    <thead>
+                        <th><h2>Usługa</h2></th>
+                        <th><h2>Cena</h2></th>
+                    </thead>
+                    <tbody>
+                        <tr th:if="${#strings.isEmpty(uslugi)}">
+                            <td colspan="2"> Brak dostępnych usług :(</td>
+                        </tr>
+                        <tr th:each="usluga : ${uslugi}">
+                            <td><span th:text="${usluga.nazwa}">Nazwa</span></td>
+                            <td>
+                                <span th:if="${usluga.cena == 0}">Do uzgodnienia</span>
+                                <span th:unless="${usluga.cena == 0}" th:text="${usluga.cena}">Cena</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                <div id="photo-cennik">
+                    <img th:src="@{/photos/juli-kosolapova-nAvhy44SbkA-unsplash.jpg}">
+                </div>
+            </div>
+            <div id="footer">
+                <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
         </div>
-    </div>
-    <div id="middle">
-        <div id="verticalmenu">
-            <ul id="menu">
-                <li class="menu-part"><a th:href="@{opis}">O NAS</a></li>
-                <li class="menu-part"><a th:href="@{uslugi}">USŁUGI</a></li>
-                <li class="menu-part"><a th:href="@{cennik}">CENNIK</a></li>
-                <li class="menu-part"><a th:href="@{kontakt}">KONTAKT</a></li>
-            </ul>
         </div>
-    <div id="content-cennik">
-        <h1>Cennik</h1>
-        <table>
-            <thead>
-                <th><h2>Usługa</h2></th>
-                <th><h2>Cena</h2></th>
-            </thead>
-            <tbody>
-                <tr th:if="${#strings.isEmpty(uslugi)}">
-                    <td colspan="2"> Brak dostępnych usług :(</td>
-                </tr>
-                <tr th:each="usluga : ${uslugi}">
-                    <td><span th:text="${usluga.nazwa}">Nazwa</span></td>
-                    <td><span th:text="${usluga.cena}">Cena</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-        <div id="photo-cennik">
-            <img th:src="@{/photos/juli-kosolapova-nAvhy44SbkA-unsplash.jpg}">
-        </div>
-    </div>
-        <div id="footer">
-            <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
-    </div>
-</div>
-</body>
+    </body>
 </html>

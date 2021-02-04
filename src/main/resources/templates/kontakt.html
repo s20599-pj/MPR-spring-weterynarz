@@ -1,75 +1,76 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
       lang="pl-PL">
-<head>
-    <title>Gabinet Weterynaryjny</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
-<body>
-<div id="container">
-    <div id="header">
-        <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
-        <p class="header-item" id="title">GAIA ZOO</p>
-        <div id="contact" class="header-item">
-            <p class="contact-content">+48 652 85 42</p>
-            <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
-        </div>
-    </div>
-    <div id="middle">
-        <div id="verticalmenu">
-            <ul id="menu">
-                <li class="menu-part"><a th:href="@{opis}">O NAS</a></li>
-                <li class="menu-part"><a th:href="@{uslugi}">USŁUGI</a></li>
-                <li class="menu-part"><a th:href="@{cennik}">CENNIK</a></li>
-                <li class="menu-part"><a th:href="@{kontakt}">KONTAKT</a></li>
-            </ul>
-        </div>
-        <div id="content-cennik">
-            <h1>Kontakt</h1>
-            Gabinet weterynaryjny "Gaia Zoo"
-            <br>ul. Zwierzątek 6
-            <br>83-000 Pszczółki
-            <br>+48 652 85 42
-            <br><i>gaiazoo@vet.com</i></br>
+    <head>
+        <title>Gabinet Weterynaryjny</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
+                <p class="header-item" id="title">GAIA ZOO</p>
+                <div id="contact" class="header-item">
+                    <p class="contact-content">+48 652 85 42</p>
+                    <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
+                </div>
+            </div>
+            <div id="middle">
+                <div id="verticalmenu">
+                    <ul id="menu">
+                        <li class="menu-part"><a th:href="@{opis}">O NAS</a></li>
+                        <li class="menu-part"><a th:href="@{uslugi}">USŁUGI</a></li>
+                        <li class="menu-part"><a th:href="@{cennik}">CENNIK</a></li>
+                        <li class="menu-part"><a th:href="@{kontakt}">KONTAKT</a></li>
+                    </ul>
+                </div>
+                <div id="content-cennik">
+                    <h1>Kontakt</h1>
+                    Gabinet weterynaryjny "Gaia Zoo"
+                    <br>ul. Zwierzątek 6
+                    <br>83-000 Pszczółki
+                    <br>+48 652 85 42
+                    <br><i>gaiazoo@vet.com</i></br>
 
 
-            <h2>Godziny otwarcia</h2>
-            <h4>Poniedziałek - piątek:</h4> 9:00 - 18:00 <h4>Sobota i niedziela:</h4> 10:00 - 15:00
+                    <h2>Godziny otwarcia</h2>
+                    <h4>Poniedziałek - piątek:</h4> 9:00 - 18:00 <h4>Sobota i niedziela:</h4> 10:00 - 15:00
 
 
-            <h2>Umów godzinę online!</h2>
-            <!--/*@thymesVar id="Klient" type="com.pjatk.project.weterynarz.model.Klient"*/-->
-            <!--/*@thymesVar id="Zwierze" type="com.pjatk.project.weterynarz.model.Zwierze"*/-->
-            <!--/*@thymesVar id="Wizyta" type="com.pjatk.project.weterynarz.model.Wizyta"*/-->
-            <!--/*@thymesVar id="Klient.imie" type="String"*/-->
-            <!--/*@thymesVar id="klient.nazwisko" type="String"*/-->
-            <!--/*@thymesVar id="klient.email" type="String"*/-->
-            <!--/*@thymesVar id="klient.telefon" type="int"*/-->
-            <!--/*@thymesVar id="zwierze.nazwa" type="String"*/-->
-            <!--/*@thymesVar id="zwierze.typ" type="String"*/-->
-            <!--/*@thymesVar id="zwierze.wiek" type="int"*/-->
-            <!--/*@thymesVar id="wizyta.opis" type="String"*/-->
-            <!--/*@thymesVar id="wizyta.data" type="java.util.Formatter.DateTime"*/-->
-            <form action="#" th:action="@{kontakt}" method="post">
-                <p><label for="Klient.imie">Imie:</label><input type="text" th:field="${Klient.imie}" name="Klient.imie" id="Klient.imie"/></p>
-                <p><label for="Klient.nazwisko">Nazwisko: </label><input type="text" th:field="${Klient.nazwisko}" name="Klient.nazwisko" id="Klient.nazwisko"/></p>
-                <p><label for="Klient.telefon">Telefon: </label><input type="text" th:field="${Klient.telefon}" name="Klient.telefon" id="Klient.telefon" placeholder="xxxxxxxxx"/></p>
-                <p><label for="Klient.email">E-mail: </label><input type="text" th:field="${Klient.email}" name="Klient.email" id="Klient.email" placeholder="przyklad@fajnie.pl"/></p>
-                <p><label for="zwierze_imie">Imie zwierzęcia: </label><input type="text" th:field="${Zwierze.nazwa}" name="zwierze_imie" id="zwierze_imie"></p>
-                <p><label for="zwierze_rasa">Typ zwierzęcia: </label><input type="text" th:field="${Zwierze.typ}" name="zwierze_rasa" id="zwierze_rasa"></p>
-                <p><label for="zwierze_wiek">Wiek zwierzęcia: </label><input type="number" th:field="${Zwierze.wiek}" name="zwierze_wiek" id="zwierze_wiek" min="0" max="20"></p>
-                <p><label for="zgloszenie_data">Preferowana data i godzina wizyty: </label><input type="datetime-local" th:field="${Wizyta.data}" name="zgloszenie_data" id="zgloszenie_data" min="2020-12-01" max="2021-12-31"></p>
-                <p><label for="zgloszenie_problem">Opis problemu: </label><textarea th:field="${Wizyta.opis}" name="zgloszenie_problem" id="zgloszenie_problem" rows="5" cols="40"/></p>
-                <p><input type="submit" value="Wyslij zgloszenie"></p>
-                <p><input type="reset" value="Zresetuj pola"></p>
-            </form>
+                    <h2>Umów godzinę online!</h2>
+                    <!--/*@thymesVar id="Klient" type="com.pjatk.project.weterynarz.model.Klient"*/-->
+                    <!--/*@thymesVar id="Zwierze" type="com.pjatk.project.weterynarz.model.Zwierze"*/-->
+                    <!--/*@thymesVar id="Wizyta" type="com.pjatk.project.weterynarz.model.Wizyta"*/-->
+                    <!--/*@thymesVar id="Klient.imie" type="String"*/-->
+                    <!--/*@thymesVar id="klient.nazwisko" type="String"*/-->
+                    <!--/*@thymesVar id="klient.email" type="String"*/-->
+                    <!--/*@thymesVar id="klient.telefon" type="int"*/-->
+                    <!--/*@thymesVar id="zwierze.nazwa" type="String"*/-->
+                    <!--/*@thymesVar id="zwierze.typ" type="String"*/-->
+                    <!--/*@thymesVar id="zwierze.wiek" type="int"*/-->
+                    <!--/*@thymesVar id="wizyta.opis" type="String"*/-->
+                    <!--/*@thymesVar id="wizyta.data" type="java.util.Formatter.DateTime"*/-->
+                    <form action="#" th:action="@{kontakt}" method="post">
+                        <p><label for="Klient.imie">Imie:</label><input type="text" th:field="${Klient.imie}" name="Klient.imie" id="Klient.imie"/></p>
+                        <p><label for="Klient.nazwisko">Nazwisko: </label><input type="text" th:field="${Klient.nazwisko}" name="Klient.nazwisko" id="Klient.nazwisko"/></p>
+                        <p><label for="Klient.telefon">Telefon: </label><input type="text" th:field="${Klient.telefon}" name="Klient.telefon" id="Klient.telefon" placeholder="xxxxxxxxx"/></p>
+                        <p><label for="Klient.email">E-mail: </label><input type="text" th:field="${Klient.email}" name="Klient.email" id="Klient.email" placeholder="przyklad@fajnie.pl"/></p>
+                        <p><label for="zwierze_imie">Imie zwierzęcia: </label><input type="text" th:field="${Zwierze.nazwa}" name="zwierze_imie" id="zwierze_imie"></p>
+                        <p><label for="zwierze_rasa">Typ zwierzęcia: </label><input type="text" th:field="${Zwierze.typ}" name="zwierze_rasa" id="zwierze_rasa"></p>
+                        <p><label for="zwierze_wiek">Wiek zwierzęcia: </label><input type="number" th:field="${Zwierze.wiek}" name="zwierze_wiek" id="zwierze_wiek" min="0" max="20"></p>
+                        <p><label for="zgloszenie_data">Preferowana data i godzina wizyty: </label><input type="datetime-local" th:field="${Wizyta.data}" name="zgloszenie_data" id="zgloszenie_data" min="2020-12-01" max="2021-12-31"></p>
+                        <p><label for="zgloszenie_problem">Opis problemu: </label><textarea th:field="${Wizyta.opis}" name="zgloszenie_problem" id="zgloszenie_problem" rows="5" cols="40" maxlength="255"/></p>
+                        <p><input type="submit" value="Wyslij zgloszenie"></p>
+                        <p><input type="reset" value="Zresetuj pola"></p>
+                    </form>
+                </div>
+                <div id="photo-opis">
+                    <img th:src="@{/photos/anete-lusina-EV0IwJzQjE8-unsplash.jpg}">
+                </div>
+            </div>
+            <div id="footer">
+                <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
+            </div>
         </div>
-        <div id="photo-opis">
-            <img th:src="@{/photos/anete-lusina-EV0IwJzQjE8-unsplash.jpg}">
-        </div>
-    <div id="footer">
-        <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
-    </div>
-</div>
-</body>
+    </body>
 </html>

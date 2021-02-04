@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
       lang="pl-PL">
-<head>
-    <title>Gabinet Weterynaryjny</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
-<body>
-<div id="container">
-    <div id="header">
-        <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
-        <p class="header-item" id="title">GAIA ZOO</p>
-        <div id="contact" class="header-item">
-            <p class="contact-content">+48 652 85 42</p>
-            <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
-        </div>
-    </div>
-    <div id="middle">
-        <div id="verticalmenu">
-            <ul id="menu">
-                <li class="menu-part"><a th:href="@{opis}">O NAS</a></li>
-                <li class="menu-part"><a th:href="@{uslugi}">USŁUGI</a></li>
-                <li class="menu-part"><a th:href="@{cennik}">CENNIK</a></li>
-                <li class="menu-part"><a th:href="@{kontakt}">KONTAKT</a></li>
-            </ul>
-        </div>
-    <div id="content">
-        <h1>Usługi</h1>
+    <head>
+        <title>Gabinet Weterynaryjny</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
+                <p class="header-item" id="title">GAIA ZOO</p>
+                <div id="contact" class="header-item">
+                    <p class="contact-content">+48 652 85 42</p>
+                    <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
+                </div>
+            </div>
+            <div id="middle">
+                <div id="verticalmenu">
+                    <ul id="menu">
+                        <li class="menu-part"><a th:href="@{opis}">O NAS</a></li>
+                        <li class="menu-part"><a th:href="@{uslugi}">USŁUGI</a></li>
+                        <li class="menu-part"><a th:href="@{cennik}">CENNIK</a></li>
+                        <li class="menu-part"><a th:href="@{kontakt}">KONTAKT</a></li>
+                    </ul>
+                </div>
+            <div id="content">
+                <h1>Usługi</h1>
 
-        <h2>Badania kontrolne</h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
-        <h2>Badania laboratoryjne</h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
-        <h2>USG</h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
-        <h2>RTG</h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
-        <h2>Zabiegi chirurgiczne</h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
-        <h2>Sterylizacja/kastracja</h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
-        <h2>Dietetyka zwierzęca</h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
-    </div>
-        <div id="photo">
-            <img th:src="@{/photos/erda-estremera-D1wiHCovGJ0-unsplash.jpg}">
+                <h2>Badania kontrolne</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
+                <h2>Badania laboratoryjne</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
+                <h2>USG</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
+                <h2>RTG</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
+                <h2>Zabiegi chirurgiczne</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
+                <h2>Sterylizacja/kastracja</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
+                <h2>Dietetyka zwierzęca</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
+            </div>
+                <div id="photo">
+                    <img th:src="@{/photos/erda-estremera-D1wiHCovGJ0-unsplash.jpg}">
+                </div>
+            </div>
+            <div id="footer">
+                <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
         </div>
-        <div id="footer">
-            <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
-    </div>
-</div>
-</body>
+        </div>
+    </body>
 </html>

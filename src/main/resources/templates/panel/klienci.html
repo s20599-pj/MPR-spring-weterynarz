@@ -25,26 +25,27 @@
                 <li class="menu-part"><a th:href="@{/logout}">WYLOGUJ</a></li>
             </ul>
         </div>
-    <div id="content">
-        <table>
-            <thead>
-                <th>Imie</th>
-                <th>Nazwisko</th>
-                <th>Email</th>
-                <th>Telefon</th>
-            </thead>
-            <tbody>
-            <tr th:if="${#strings.isEmpty(klienci)}">
-                <td colspan="4"> Brak klientów w bazie :(</td>
-            </tr>
-            <tr th:each="klient : ${klienci}">
-                <td><span th:text="${klient.imie}">Imie</span></td>
-                <td><span th:text="${klient.nazwisko}">Nazwisko</span></td>
-                <td><span th:text="${klient.email}">Email</span></td>
-                <td><span th:text="${klient.telefon}">Telefon</span></td>
-            </tr>
-            </tbody>
-        </table>
+        <div id="content">
+            <table>
+                <thead>
+                    <th>Imie</th>
+                    <th>Nazwisko</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                </thead>
+                <tbody>
+                <tr th:if="${#strings.isEmpty(klienci)}">
+                    <td colspan="4"> Brak klientów w bazie :(</td>
+                </tr>
+                <tr th:each="klient : ${klienci}">
+                    <td><span th:text="${klient.imie}">Imie</span></td>
+                    <td><span th:text="${klient.nazwisko}">Nazwisko</span></td>
+                    <td><span th:text="${klient.email}">Email</span></td>
+                    <td><span th:text="${klient.telefon}">Telefon</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div id="footer">
         <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
