@@ -8,20 +8,21 @@
 <body>
 <div id="container">
     <div id="header">
-        <a href="/" class="header-item">tutej logo</a>
-        <p class="header-item" id="title">Gaia Zoo</p>
+        <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
+        <p class="header-item" id="title">GAIA ZOO</p>
         <div id="contact" class="header-item">
-            <p class="contact-content">nr telefonu</p>
-            <p class="contact-content">adres</p>
+            <p class="contact-content">+48 652 85 42</p>
+            <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
         </div>
     </div>
     <div id="middle">
         <div id="verticalmenu">
             <ul id="menu">
-                <li class="menu-part"><a th:href="@{opis}">O nas</a></li>
-                <li class="menu-part"><a th:href="@{uslugi}">Usługi</a></li>
-                <li class="menu-part"><a th:href="@{cennik}">Cennik</a></li>
-                <li class="menu-part"><a th:href="@{kontakt}">Kontakt</a></li>
+                <li class="menu-part"><a th:href="@{pracownik}">PRACOWNICY</a></li>
+                <li class="menu-part"><a th:href="@{dodajUslugi}">DODAJ USŁUGI</a></li>
+                <li class="menu-part"><a th:href="@{klienci}">SPRAWDŹ KLIENTÓW</a></li>
+                <li class="menu-part"><a th:href="@{zwierzeta}">SPRAWDŹ ZWIERZĘTA</a></li>
+                <li class="menu-part"><a th:href="@{/logout}">WYLOGUJ</a></li>
             </ul>
         </div>
     <div id="content">
@@ -31,8 +32,8 @@
             <p><input type="submit" value="Dodaj usługę"></p>
             <p><input type="reset" value="Zresetuj pola"></p>
     </div>
-    <div id="footer">
-        <a th:href="@{regulamin}">Regulamin</a> | <a th:href="@{pracownik}">Gaia zoo</a> | Kamil Romiński © 2021
+        <div id="footer">
+            <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
     </div>
 </div>
 </body>

@@ -51,8 +51,7 @@ public class UserController {
 
     @PostMapping("/dodajUslugi")
     public String addUsluga(@ModelAttribute("Uslugi") Uslugi uslugi){
-        uslugiService.addUslugi(uslugi);
-        return "successful";
+        return uslugiService.addUslugi(uslugi);
     }
 
     @RequestMapping("/regulamin")
@@ -91,10 +90,12 @@ public class UserController {
 
     @PostMapping("/kontakt")
     public String addKlient(@ModelAttribute("Klient") Klient klient, @ModelAttribute("Zwierze") Zwierze zwierze,@ModelAttribute("Wizyta") Wizyta wizyta){
-        klientService.createKlient(klient);
-        zwierzeService.addZwierze(new Zwierze(zwierze.getNazwa(), zwierze.getTyp(), zwierze.getWiek(), klient.getId()));
-        wizytaService.addWizyta(new Wizyta(wizyta.getData(), wizyta.getOpis(),klient.getId()));
-        return "successful";
+        if(klientService.createKlient(klient) == "bladdanychuser")
+            return "bladdanychuser";
+        if(zwierzeService.addZwierze(new Zwierze(zwierze.getNazwa(), zwierze.getTyp(), zwierze.getWiek(), klient.getId())) == "bladdanychuser"){
+            return "bladdanychuser";
+        }
+        return wizytaService.addWizyta(new Wizyta(wizyta.getData(), wizyta.getOpis(),klient.getId()));
     }
 
     @GetMapping("/hello")

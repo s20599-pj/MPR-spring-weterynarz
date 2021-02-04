@@ -8,28 +8,28 @@
 <body>
 <div id="container">
     <div id="header">
-        <a href="/" class="header-item">tutej logo</a>
-        <p class="header-item" id="title">Gaia Zoo</p>
+        <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
+        <p class="header-item" id="title">GAIA ZOO</p>
         <div id="contact" class="header-item">
-            <p class="contact-content">nr telefonu</p>
-            <p class="contact-content">adres</p>
+            <p class="contact-content">+48 652 85 42</p>
+            <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
         </div>
     </div>
     <div id="middle">
         <div id="verticalmenu">
             <ul id="menu">
-                <li class="menu-part"><a th:href="@{opis}">O nas</a></li>
-                <li class="menu-part"><a th:href="@{uslugi}">Usługi</a></li>
-                <li class="menu-part"><a th:href="@{cennik}">Cennik</a></li>
-                <li class="menu-part"><a th:href="@{kontakt}">Kontakt</a></li>
+                <li class="menu-part"><a th:href="@{opis}">O NAS</a></li>
+                <li class="menu-part"><a th:href="@{uslugi}">USŁUGI</a></li>
+                <li class="menu-part"><a th:href="@{cennik}">CENNIK</a></li>
+                <li class="menu-part"><a th:href="@{kontakt}">KONTAKT</a></li>
             </ul>
         </div>
-    <div id="content">
-        Tutaj bedzie fajny cennik usług
+    <div id="content-cennik">
+        <h1>Cennik</h1>
         <table>
             <thead>
-                <th>Usługa</th>
-                <th>Cena</th>
+                <th><h2>Usługa</h2></th>
+                <th><h2>Cena</h2></th>
             </thead>
             <tbody>
                 <tr th:if="${#strings.isEmpty(uslugi)}">
@@ -42,8 +42,12 @@
             </tbody>
         </table>
     </div>
-    <div id="footer">
-        <a th:href="@{regulamin}">Regulamin</a> | <a th:href="@{pracownik}">Gaia zoo</a> | Kamil Romiński © 2021
+        <div id="photo-cennik">
+            <img th:src="@{/photos/juli-kosolapova-nAvhy44SbkA-unsplash.jpg}">
+        </div>
+    </div>
+        <div id="footer">
+            <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
     </div>
 </div>
 </body>

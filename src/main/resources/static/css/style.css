@@ -49,13 +49,78 @@ body{
     width: 100vw;
     height: 10vh;
 }
+#header a img{
+    margin-left: 5px;
+    margin-top: 10px;
+    height: 75px;
+    width: 135px;
+}
 #content{
     width: 49vw;
     height: 85vh;
     float: left;
     padding-left: 2.5vw;
-    padding-right: 35vw;
     text-align: justify;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-right: 2vw;
+}
+#content-cennik{
+    width: 29vw;
+    height: 85vh;
+    float: left;
+    padding-left: 2.5vw;
+    text-align: justify;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-right: 2vw;
+}
+#photo{
+    width: 30vw;
+    height: 85vh;
+    float: left;
+}
+#photo-cennik{
+    width: 30vw;
+    height: 85vh;
+    float: left;
+}
+#photo-cennik img{
+    margin-top: 3vw;
+    padding-right: 10vw;
+    width: 50vw;
+    height: 65vh;
+}
+#photo-opis{
+    width: 30vw;
+    height: 85vh;
+    float: left;
+}
+#photo-opis img{
+    padding-left: 5vw;
+    margin-top: 3vw;
+    padding-right: 5vw;
+    width: 45vw;
+    height: 65vh;
+}
+
+#photo img{
+    margin-left: 5vw;
+    margin-top: 3vw;
+    width: 25vw;
+    height: 65vh;
+}
+#content-cennik form{
+    width: 450px
+}
+#content-cennik form input{
+    float: right;
+    margin-right: 10px;
+    width: 177px;
+}
+#content-cennik form textarea{
+    float: right;
+    margin-right: 10px;
 }
 #content-regulamin{
     width: 82vw;

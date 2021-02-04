@@ -15,8 +15,15 @@ public class ZwierzeService {
         this.zwierzeRepository = zwierzeRepository;
     }
 
-    public Zwierze addZwierze(Zwierze zwierze){
-        return zwierzeRepository.save(zwierze);
+    public String addZwierze(Zwierze zwierze){
+        if(zwierze.getWiek()>20 || zwierze.getWiek()<0 || zwierze.getNazwa() == "" || zwierze.getTyp() == ""){
+            return "bladdanychuser";
+        }
+        else{
+            zwierzeRepository.save(zwierze);
+            return "successful";
+        }
+
     }
 
     public List<Zwierze> findAllZwierze(){

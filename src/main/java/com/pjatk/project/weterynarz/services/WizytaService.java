@@ -16,8 +16,15 @@ public class WizytaService {
     public List<Wizyta> findAllWizyta(){
         return wizytaRepository.findAll();
     }
-    public Wizyta addWizyta(Wizyta wizyta){
-        return wizytaRepository.save(wizyta);
+    public String addWizyta(Wizyta wizyta){
+        if(wizyta.getData() == null || wizyta.getOpis() == ""){
+            return "bladdanychuser";
+        }
+        else{
+            wizytaRepository.save(wizyta);
+            return "successful";
+        }
+
     }
 
 }

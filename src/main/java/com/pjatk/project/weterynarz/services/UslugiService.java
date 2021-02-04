@@ -18,7 +18,14 @@ public class UslugiService {
         return uslugiRepository.findAll();
     }
 
-    public Uslugi addUslugi(Uslugi uslugi){
-        return uslugiRepository.save(uslugi);
+    public String addUslugi(Uslugi uslugi){
+        if(uslugi.getNazwa() == null || uslugi.getCena() == 0){
+            return "bladdanych";
+        }
+        else{
+            uslugiRepository.save(uslugi);
+            return "successful";
+        }
+
     }
 }

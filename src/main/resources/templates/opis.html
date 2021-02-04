@@ -8,27 +8,45 @@
 <body>
 <div id="container">
     <div id="header">
-        <a href="/" class="header-item">tutej logo</a>
-        <p class="header-item" id="title">Gaia Zoo</p>
+        <a href="/" class="header-item"><img th:src="@{/photos/pieseg.png}"></a>
+        <p class="header-item" id="title">GAIA ZOO</p>
         <div id="contact" class="header-item">
-            <p class="contact-content">nr telefonu</p>
-            <p class="contact-content">adres</p>
+            <p class="contact-content">+48 652 85 42</p>
+            <p class="contact-content">ul. Zwierzątek 6, 83-000 Pszczółki</p>
         </div>
     </div>
     <div id="middle">
         <div id="verticalmenu">
             <ul id="menu">
-                <li class="menu-part"><a th:href="@{opis}">O nas</a></li>
-                <li class="menu-part"><a th:href="@{uslugi}">Usługi</a></li>
-                <li class="menu-part"><a th:href="@{cennik}">Cennik</a></li>
-                <li class="menu-part"><a th:href="@{kontakt}">Kontakt</a></li>
+                <li class="menu-part"><a th:href="@{opis}">O NAS</a></li>
+                <li class="menu-part"><a th:href="@{uslugi}">USŁUGI</a></li>
+                <li class="menu-part"><a th:href="@{cennik}">CENNIK</a></li>
+                <li class="menu-part"><a th:href="@{kontakt}">KONTAKT</a></li>
             </ul>
         </div>
-    <div id="content">
-        Tutaj znajduje sie fajny opis naszego gabinetu
+    <div id="content-cennik">
+        <h1>O nas</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis augue eu tellus cursus convallis a sit amet arcu. Integer mattis, neque et imperdiet finibus, ligula purus pulvinar arcu, non consectetur sem diam quis nunc. Etiam vitae lacus in arcu rhoncus ornare sit amet sed arcu. Morbi at est sit amet enim tincidunt commodo. Cras accumsan ex a turpis pellentesque, vel efficitur ante vehicula. Aliquam eu magna vulputate, mattis mi volutpat, tempor libero. Nulla facilisi. Proin eu justo consectetur, varius diam ut, finibus odio. Suspendisse ipsum mi, lacinia quis hendrerit eu, mattis eget ligula. Fusce vel mollis nunc, quis facilisis diam.
+
+        Donec commodo gravida volutpat. In viverra nibh vitae dignissim porta. Duis ornare convallis consequat. Nulla bibendum orci mauris, et vestibulum ligula pharetra consectetur. Integer sed feugiat turpis. Proin vestibulum pharetra vehicula. Curabitur pretium dictum ipsum, ullamcorper sodales lacus cursus sit amet. Aliquam pretium, mauris a egestas iaculis, est erat vehicula diam, sed semper ipsum arcu eget metus. Vivamus aliquet diam ut mi cursus, vitae dapibus dolor consectetur. Praesent ac imperdiet velit, fringilla aliquet est. Donec ornare mi ac fringilla ullamcorper. Quisque vel risus fringilla, gravida est eu, pulvinar dui. Mauris lacinia, lectus id porta tempor, nibh quam tempus risus, in accumsan lacus nibh id odio.
+
+        Donec nec neque sed quam sollicitudin placerat eget nec mauris. Fusce in pellentesque nibh. Duis dictum, enim quis blandit dignissim, orci urna vestibulum nisi, ut ultricies felis elit ac massa. In nisl turpis, eleifend at leo vestibulum, laoreet fermentum risus. Vestibulum eget mollis arcu. Nulla quis libero bibendum, lacinia magna eu, tristique tortor. Duis non viverra magna.
+
+        Fusce dictum turpis felis, nec euismod orci efficitur et. Morbi eu metus ligula. Nulla rhoncus, ipsum et luctus tristique, ex neque imperdiet ipsum, nec placerat turpis felis sed elit. Cras et purus libero. Ut id rutrum tellus. Aenean egestas massa sed massa iaculis, nec tristique tellus porttitor. Praesent nec accumsan felis, sit amet egestas dui. Etiam quis tristique tellus. Phasellus gravida euismod dolor vitae euismod.
+
+        Etiam interdum malesuada elit in malesuada. Donec ligula nibh, rutrum nec erat nec, molestie dignissim est. Aenean sagittis tempus est, in varius massa ullamcorper pharetra. Mauris accumsan ut turpis ut rhoncus. Nulla dapibus ante in hendrerit eleifend. Ut viverra tristique pharetra. Praesent eu nunc eget lacus suscipit dictum vel non elit.
+
+        Donec et lectus maximus, tempus velit ac, feugiat nunc. Nunc eget vestibulum lectus, sed commodo nisl. Pellentesque dictum lorem ac mi bibendum placerat. Donec eget felis id justo sollicitudin condimentum. Proin sit amet ante faucibus, imperdiet metus quis, posuere risus. Ut ac velit sed neque dignissim euismod. Vestibulum consectetur mi diam, id sollicitudin leo tempus sed. Mauris tristique nisl non feugiat suscipit. Morbi in elit sed est porta rhoncus. Sed a arcu id enim iaculis hendrerit. Duis id fermentum ex. Nullam justo urna, volutpat in lorem et, vehicula lobortis lectus.
+
+        Mauris cursus, risus in consequat gravida, nulla arcu interdum nunc, ac gravida eros ante sit amet neque. Integer quis ornare dolor, a lacinia nibh. In iaculis mattis turpis quis mattis. Curabitur bibendum tincidunt consectetur. Fusce pretium enim nulla, ac fermentum turpis molestie commodo. Sed at pulvinar sem. Integer sed sem sit amet lectus ornare consectetur. Ut consectetur dolor quis quam elementum, quis gravida nisi faucibus. Nullam molestie in tortor vel finibus. Cras pretium malesuada magna, quis vehicula leo scelerisque aliquam. Quisque scelerisque arcu vel neque volutpat accumsan. Nam tincidunt tristique urna sed sagittis. Quisque eget lacus erat.
     </div>
-    <div id="footer">
-        <a th:href="@{regulamin}">Regulamin</a> | <a th:href="@{pracownik}">Gaia zoo</a> | Kamil Romiński © 2021
+        <div id="photo-opis">
+            <img th:src="@{/photos/joenomias-m-de-jong-zhYy10qCzdw-unsplash.jpg}">
+    </div>
+    </div>
+
+        <div id="footer">
+            <a th:href="@{regulamin}" id="regulamin">Regulamin</a> | <a th:href="@{pracownik}" id="loginpage">Gaia Zoo</a> | Kamil Romiński © 2021
     </div>
 </div>
 </body>
